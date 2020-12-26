@@ -1,12 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.ReactNative.Managed;
+using Newtonsoft.Json.Linq;
 
 namespace RNViewShot
 {
-    public sealed class Class1
+    [ReactModule]
+    class RNViewShot
     {
+        [ReactMethod]
+        public string captureRef(int tag, JObject options, ReactPromise<JSValue> promise)
+        {
+            return "You tag number is: " + tag;
+        }
     }
 }
